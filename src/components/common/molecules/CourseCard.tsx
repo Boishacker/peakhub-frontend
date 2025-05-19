@@ -46,7 +46,7 @@ const CourseCard = ({
 
   return (
     <div className="course-card-wrapper">
-      <Link to={`/course/${id}`}>
+    <Link to={`/course/${id}`}>
         <div className="course-card">
           <div className="course-image-container">
             <img 
@@ -76,28 +76,28 @@ const CourseCard = ({
             <div className="course-meta">
               <span className="course-level">{level.charAt(0).toUpperCase() + level.slice(1)}</span>
               <span className="course-duration">{duration}</span>
-            </div>
+                </div>
             <div className="course-rating">
               <span className="rating-score">{rating.toFixed(1)}</span>
               <Rate allowHalf disabled defaultValue={rating} className="rating-stars" />
               <span className="rating-count">({ratingCount})</span>
-            </div>
+                </div>
             <div className="course-price">
-              {discountPrice ? (
+                {discountPrice ? (
                 <>
                   <span className="discounted-price">${discountPrice.toFixed(2)}</span>
                   <span className="original-price">${price.toFixed(2)}</span>
                 </>
-              ) : (
+                ) : (
                 <span className="normal-price">${price.toFixed(2)}</span>
-              )}
+                )}
+              </div>
             </div>
-          </div>
           <button className="wishlist-button" aria-label="Add to wishlist">
             <HeartOutlined />
           </button>
         </div>
-      </Link>
+    </Link>
       <style>{`
         .course-card-wrapper {
           position: relative;

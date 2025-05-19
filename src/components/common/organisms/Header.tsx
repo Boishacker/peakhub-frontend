@@ -11,6 +11,7 @@ import Logo from '../atoms/Logo';
 import SearchBar from '../molecules/SearchBar';
 import AuthButtons from '../molecules/AuthButtons';
 import CartButton from '../molecules/CartButton';
+import NotificationsDropdown from '../molecules/NotificationsDropdown';
 import { useAuth } from '../../../contexts/AuthContext';
 import { Typography, Tabs } from 'antd';
 
@@ -91,7 +92,8 @@ const Header = () => {
                 <UserOutlined className="mr-1" /> Instructor
               </Link>
             )}
-            <CartButton />
+            {(!user || user.role !== 'admin') && <CartButton />}
+            {user && <NotificationsDropdown />}
             <AuthButtons />
             
             {/* Language Dropdown */}

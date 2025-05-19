@@ -18,7 +18,6 @@ import AdminInstructors from './pages/Admin/AdminInstructors';
 import AdminCourses from './pages/Admin/AdminCourses';
 import AdminTransactions from './pages/Admin/AdminTransactions';
 import AdminReviews from './pages/Admin/AdminReviews';
-import AdminReports from './pages/Admin/AdminReports';
 import AdminCategories from './pages/Admin/AdminCategories';
 import AdminPages from './pages/Admin/AdminPages';
 import AdminNotifications from './pages/Admin/AdminNotifications';
@@ -54,7 +53,6 @@ function App() {
           <Route path="/admin/courses" element={<AdminCourses />} />
           <Route path="/admin/transactions" element={<AdminTransactions />} />
           <Route path="/admin/reviews" element={<AdminReviews />} />
-          <Route path="/admin/reports" element={<AdminReports />} />
           <Route path="/admin/categories" element={<AdminCategories />} />
           <Route path="/admin/pages" element={<AdminPages />} />
           <Route path="/admin/notifications" element={<AdminNotifications />} />

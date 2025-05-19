@@ -336,7 +336,7 @@ const CoursePlayer = () => {
     }
   };
 
-  const getItemIcon = (item) => {    if (item.completed) {      return <CheckCircleFilled className="text-green-500" />;    }    switch (item.type) {      case 'video':        return <PlayCircleOutlined />;      case 'quiz':        return <FormOutlined />;      case 'exercise':        return <FileTextOutlined />;      case 'assignment':        return <FormOutlined />;      case 'project':        return <ProjectOutlined />;      case 'article':        return <FileOutlined />;      default:        return <PlayCircleOutlined />;    }  };  // Function to find the current section  const getCurrentSection = () => {    if (!currentLecture) return null;        for (const section of courseContent) {      if (section.items.some(item => item.id === currentLecture.id)) {        return section;      }    }    return null;  };  // Current section  const currentSection = getCurrentSection();
+    const getItemIcon = (item) => {    if (item.completed) {      return <CheckCircleFilled className="text-green-500" />;    }    switch (item.type) {      case 'video':        return <PlayCircleOutlined />;      case 'quiz':        return <FormOutlined />;      case 'exercise':        return <FileTextOutlined />;      case 'assignment':        return <FormOutlined />;      case 'project':        return <ProjectOutlined />;      case 'article':        return <FileOutlined />;      default:        return <PlayCircleOutlined />;    }  };  // Function to find the current section  const getCurrentSection = () => {    if (!currentLecture) return null;        for (const section of courseContent) {      if (section.items.some(item => item.id === currentLecture.id)) {        return section;      }    }    return null;  };  // Current section  const currentSection = getCurrentSection();
 
   const renderCourseContent = () => {
     return (
@@ -848,10 +848,10 @@ const CoursePlayer = () => {
     return (
       <MainLayout>
         <div className="flex justify-center items-center" style={{ height: 'calc(100vh - 200px)' }}>
-          <div className="text-center">
-            <Title level={3}>Loading course...</Title>
-          </div>
+        <div className="text-center">
+          <Title level={3}>Loading course...</Title>
         </div>
+      </div>
       </MainLayout>
     );
   }
@@ -860,18 +860,18 @@ const CoursePlayer = () => {
     return (
       <MainLayout>
         <div className="flex justify-center items-center" style={{ height: 'calc(100vh - 200px)' }}>
-          <div className="text-center">
-            <Title level={3}>Course not found</Title>
+        <div className="text-center">
+          <Title level={3}>Course not found</Title>
             <Button 
               type="primary" 
               onClick={() => navigate('/courses')}
               className="theme-button mt-4"
               style={{ backgroundColor: '#6f0fe0', borderColor: '#6f0fe0' }}
             >
-              Browse Courses
-            </Button>
-          </div>
+            Browse Courses
+          </Button>
         </div>
+      </div>
       </MainLayout>
     );
   }
@@ -899,21 +899,21 @@ const CoursePlayer = () => {
         <div className="flex flex-col md:flex-row w-full">
           {/* Main content area for video and tabs */}
           <Content className="bg-white overflow-auto flex-1" style={{ maxHeight: 'calc(100vh - 135px)' }}>
-            {renderVideoPlayer()}
-          </Content>
+          {renderVideoPlayer()}
+        </Content>
 
-          {/* Right sidebar for lesson navigation (desktop and tablets) */}
-          <Sider
-            width={320}
-            collapsible
-            collapsed={!rightSidebarVisible}
-            trigger={null}
-            collapsedWidth={0}
-            className="bg-white border-l border-gray-200 hidden md:block"
+        {/* Right sidebar for lesson navigation (desktop and tablets) */}
+        <Sider
+          width={320}
+          collapsible
+          collapsed={!rightSidebarVisible}
+          trigger={null}
+          collapsedWidth={0}
+          className="bg-white border-l border-gray-200 hidden md:block"
             style={{ height: 'calc(100vh - 135px)' }}
-          >
-            {renderLessonNavigator()}
-          </Sider>
+        >
+          {renderLessonNavigator()}
+        </Sider>
         </div>
         
         {/* Toggle sidebar button (visible on desktop) */}
